@@ -35,8 +35,9 @@ class Tuniflix : MainAPI() {
 
     private fun Element.toSearchResponse(): SearchResponse? {
         val link = this.selectFirst("a") ?: return null
-        val href = link.attr("href")
-        val title = this.selectFirst(".Title")?.text() ?: return null
+        val href = fixUrl(link.attr("href"))
+        val title = (this.selectFirst(".Title, .title, h2, h3")?.text() ?: link.attr("title").ifBlank { link.text() }).trim()
+        if (href.isBlank() || title.isBlank()) return null
 
         var posterUrl = this.selectFirst(".Image img")?.let { img ->
             img.attr("data-src").ifBlank { img.attr("data-lazy-src") }.ifBlank { img.attr("src") }
@@ -70,8 +71,9 @@ class Tuniflix : MainAPI() {
         val title = document.selectFirst("h1.Title")?.text()?.trim() ?: "Unknown"
         val desc = document.selectFirst(".Description p")?.text()?.trim()
 
-        var poster = document.selectFirst(".Image img.TPostBg")?.attr("src")
-            ?: document.selectFirst(".Image img")?.attr("src")
+        var poster = document.selectFirst(".Image img.TPostBg, .Image img")?.let {
+            it.attr("data-src").ifBlank { it.attr("data-lazy-src") }.ifBlank { it.attr("src") }
+        }
         if (poster?.startsWith("//") == true) poster = "https:$poster"
 
         val year = document.selectFirst(".Date")?.text()?.toIntOrNull()
@@ -85,7 +87,7 @@ class Tuniflix : MainAPI() {
 
             seasonLinks.amap { seasonUrl ->
                 try {
-                    val seasonDoc = app.get(seasonUrl).document
+                    val seasonDoc = app.get(fixUrl(seasonUrl), referer = url).document
                     val seasonTitle = seasonDoc.selectFirst("h1.Title")?.text() ?: ""
                     val seasonNum = Regex("Season\\s*(\\d+)").find(seasonTitle)?.groupValues?.get(1)?.toIntOrNull() ?: 1
 
@@ -142,10 +144,11 @@ class Tuniflix : MainAPI() {
                     foundLinks.add(src)
                 }
             }
-            val scriptPattern = Regex("""https?:\\?/\\?/[^\\s"'<>]+""")
+            val scriptPattern = Regex("""https?://[^\\s"'<>]+""")
             document.select("script").forEach { script ->
-                scriptPattern.findAll(script.data() + script.html()).forEach { match ->
-                    val candidate = match.value.replace("\\\\/", "/").trimEnd(';', ')', ',')
+                val scriptText = (script.data() + script.html()).replace("\\\\/", "/")
+                scriptPattern.findAll(scriptText).forEach { match ->
+                    val candidate = match.value.trimEnd(';', ')', ',')
                     if (candidate.contains(".m3u8") || candidate.contains("embed", true) || candidate.contains("player", true)) {
                         val fixed = fixUrl(candidate)
                         if (fixed.startsWith("http", true)) foundLinks.add(fixed)
