@@ -26,7 +26,7 @@ class Tuniflix : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val url = request.data + page
-        val document = app.get(url).document
+        val document = app.get(url, referer = mainUrl).document
         val home = document.select("article.TPost.B").mapNotNull {
             it.toSearchResponse()
         }
@@ -39,7 +39,7 @@ class Tuniflix : MainAPI() {
         val title = this.selectFirst(".Title")?.text() ?: return null
 
         var posterUrl = this.selectFirst(".Image img")?.let { img ->
-            img.attr("data-src") ?: img.attr("src")
+            img.attr("data-src").ifBlank { img.attr("data-lazy-src") }.ifBlank { img.attr("src") }
         }
         if (posterUrl?.startsWith("//") == true) {
             posterUrl = "https:$posterUrl"
@@ -58,14 +58,14 @@ class Tuniflix : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
         val url = "$mainUrl/?s=$query"
-        val document = app.get(url).document
+        val document = app.get(url, referer = mainUrl).document
         return document.select("article.TPost.B").mapNotNull {
             it.toSearchResponse()
         }
     }
 
     override suspend fun load(url: String): LoadResponse {
-        val document = app.get(url).document
+        val document = app.get(url, referer = mainUrl).document
 
         val title = document.selectFirst("h1.Title")?.text()?.trim() ?: "Unknown"
         val desc = document.selectFirst(".Description p")?.text()?.trim()
@@ -121,24 +121,41 @@ class Tuniflix : MainAPI() {
         }
     }
     private suspend fun deepSearchIframes(url: String, depth: Int = 0, visited: MutableSet<String> = mutableSetOf()): List<String> {
-        if (depth > 3 || !visited.add(url)) return emptyList()
-        val foundLinks = mutableListOf<String>()
-
+        if (depth > 4 || !visited.add(url)) return emptyList()
+        val foundLinks = linkedSetOf<String>()
         try {
             val document = app.get(url, referer = mainUrl).document
-            document.select("iframe").forEach { iframe ->
-                val src = fixUrl(iframe.attr("src") ?: iframe.attr("data-src"))
-                if (src.isBlank()) return@forEach
-                if (src.contains(mainUrl) || src.contains("trembed") || src.contains("trid")) {
+            val candidates = document.select("iframe, frame, video source, source[src], [data-src], [data-lazy-src], [data-embed]")
+            candidates.forEach { element ->
+                val raw = element.attr("src")
+                    .ifBlank { element.attr("data-src") }
+                    .ifBlank { element.attr("data-lazy-src") }
+                    .ifBlank { element.attr("data-embed") }
+                if (raw.isBlank()) return@forEach
+                val src = fixUrl(raw.trim())
+                if (!src.startsWith("http", true)) return@forEach
+                val host = try { URI(src).host.orEmpty().lowercase() } catch (_: Exception) { "" }
+                val isNested = host.endsWith("tuniflix.site") || host.contains("trembed") || host.contains("trid")
+                if (isNested && depth < 4) {
                     foundLinks.addAll(deepSearchIframes(src, depth + 1, visited))
                 } else {
                     foundLinks.add(src)
                 }
             }
+            val scriptPattern = Regex("""https?:\\?/\\?/[^\\s"'<>]+""")
+            document.select("script").forEach { script ->
+                scriptPattern.findAll(script.data() + script.html()).forEach { match ->
+                    val candidate = match.value.replace("\\\\/", "/").trimEnd(';', ')', ',')
+                    if (candidate.contains(".m3u8") || candidate.contains("embed", true) || candidate.contains("player", true)) {
+                        val fixed = fixUrl(candidate)
+                        if (fixed.startsWith("http", true)) foundLinks.add(fixed)
+                    }
+                }
+            }
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        return foundLinks.distinct()
+        return foundLinks.toList()
     }
 
     override suspend fun loadLinks(
@@ -147,17 +164,25 @@ class Tuniflix : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
-        val allIframes = deepSearchIframes(data)
-
-        allIframes.forEach { playerUrl ->
-            if (playerUrl.contains("#") || playerUrl.contains("id=")) {
-                SmartPlayer.extract(playerUrl, callback)
-            } else {
-                loadExtractor(playerUrl, mainUrl, subtitleCallback, callback)
-            }
+        val allPlayers = deepSearchIframes(data)
+        var extractedCount = 0
+        val countingCallback: (ExtractorLink) -> Unit = {
+            extractedCount++
+            callback(it)
         }
 
-        return true
+        allPlayers.forEach { playerUrl ->
+            try {
+                if (playerUrl.contains("#") || playerUrl.contains("id=")) {
+                    SmartPlayer.extract(playerUrl, countingCallback)
+                } else {
+                    loadExtractor(playerUrl, data, subtitleCallback, countingCallback)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        return extractedCount > 0
     }
 
     private fun fixUrl(url: String): String {
