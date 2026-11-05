@@ -144,9 +144,9 @@ class Tuniflix : MainAPI() {
                     foundLinks.add(src)
                 }
             }
-            val scriptPattern = Regex("""https?://[^\\s]+""")
+            val scriptPattern = Regex("""https?://[^\s]+""")
             document.select("script").forEach { script ->
-                val scriptText = (script.data() + script.html()).replace("\\\\/", "/")
+                val scriptText = (script.data() + script.html()).replace("\\/", "/")
                 scriptPattern.findAll(scriptText).forEach { match ->
                     val candidate = match.value.trimEnd(';', ')', ',')
                     if (candidate.contains(".m3u8") || candidate.contains("embed", true) || candidate.contains("player", true)) {
