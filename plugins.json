@@ -1,0 +1,952 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/3isk.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "3isk",
+        "internalName": "3isk",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 31166,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://3esk.onl/wp-content/uploads/2021/01/3isk-logo.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-c94b00a5faf005851769037c2f2158117fdcf0faa015a52ba42beab05aa2f8aa"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/5TV.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "5TV",
+        "internalName": "5TV",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 26624,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "AsianDrama"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/re-3arabi/refs/heads/main/5TV/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-581ad6f054700bdbad0cf8b1eab1cf5106584c114ddf5394be87563fb152213d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Aflaam.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Aflaam",
+        "internalName": "Aflaam",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 15484,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://aflaam.com/style/assets/images/logo.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-e20404da8384e7f5873f682a1908181751db574df035b607966dfb4acbd849b0"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Aia2tv 2.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "Aia2tv 2",
+        "internalName": "Aia2tv 2",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 14287,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "AsianDrama"
+        ],
+        "iconUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEhyYSi351HRw/company-logo_200_200/company-logo_200_200/0/1630489719119?e=2147483647&v=beta&t=Br69OJ2AwT5vdJHgl-DTvliEqOmp6VQLYwUWcFqG4u4",
+        "apiVersion": 1,
+        "fileHash": "sha256-d28dac44087f36ac58277c1a45dda5276bdc79f778d12792b1893586d0e14025"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Akwam.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "Akwam",
+        "internalName": "Akwam",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 30590,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2vuGLv4zY3XpoN2jza2unCQ95xFfypfe-h3k3xteMbGxl7taw-ziXyNg&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-50f9777349cb0a40cd1cb60bca18efd1b3d82191f375810d4670ed79ba728843"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Alooytv.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Alooytv",
+        "internalName": "Alooytv",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 15003,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://fitnur.com/uploads/avatars/c5ae8dadf88bcea9549657ec451a1563.jpg",
+        "apiVersion": 1,
+        "fileHash": "sha256-8dc3850bb169fad209b545cd6de5ef4a1c666db7ec0c45bea95ae26d373961b9"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Anim3rb.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Anim3rb",
+        "internalName": "Anim3rb",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 29742,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Anime"
+        ],
+        "iconUrl": "https://images.anime3rb.com/favicon/apple-touch-icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-60549f8a6def2dc2455c6d2aba476104ca676e7c935d09e6f8e41ca6a3d51d67"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Anime-Phoenix.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Anime-Phoenix",
+        "internalName": "Anime-Phoenix",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 43522,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "iconUrl": "https://yt3.googleusercontent.com/mBIIR5cqQC4Y-o7HaxbkJfs305X6tbHLSNPk6MRMCDJsH8xP0SfGhK-CBDpSmH95wSff9z99sg=s900-c-k-c0x00ffffff-no-rj",
+        "apiVersion": 1,
+        "fileHash": "sha256-d3f0c1e3ad811774615c40c7bb88cadd34bc56118020090b3605e7b5c57ac6a6"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Anime4up.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Anime4up",
+        "internalName": "Anime4up",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 37890,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Anime"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkVDfHjqUpRyrWJjW8wUHH87BhSO6B9uxI-B80sAy_AQ&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-80b5d5f87fb0da6bbe42e0977c765bcce2c6cb918e251d9c17e996f7144d01da"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Animerco.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "Animerco",
+        "internalName": "Animerco",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 91390,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/Oldarabrepo/refs/heads/main/img/file_0000000042f861f49090744dc097ee2f.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-970322f4969467c943711c3a257657684dac3a191743d3efde76687a0257e07b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/AnimeRift.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "AnimeRift",
+        "internalName": "AnimeRift",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "⚠️ تنبيه: يُرجى استخدام VPN لتجنب حظر عنوان الـ IP الخاص بك",
+        "fileSize": 49708,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/re-3arabi/refs/heads/main/AnimeRift/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-b0b24d123a02ae1b3f8b09f709b0b057f78caaa2f70a6bc57bf41894e7635181"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Animewitcher.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "Animewitcher",
+        "internalName": "Animewitcher",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 34328,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/Oldarabrepo/refs/heads/main/img/anime_witcher_round_icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-35bde495e70046cde642d1afcfd568f8adef1600aa5d29dd40a2edf373b72adf"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Bristege.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Bristege",
+        "internalName": "Bristege",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 26137,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://amd.brstej.com/22.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-245c5e85b6e5dc40afd0ed8fbd11571327ee06fbc7dd24ff52f0b6de67aa73df"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Carateen.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Carateen",
+        "internalName": "Carateen",
+        "authors": [
+            "abodabodd"
+        ],
+        "description": "عد بالزمن للوراء وشاهد كارتون الطفولة ✨",
+        "fileSize": 24316,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime",
+            "Cartoon",
+            "Live"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/re-3arabi/refs/heads/main/Carateen/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-2c790fea78a85cfe39aa99016f638b98669d97e657c2cb27c527663622e54dfc"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Cee.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Cee",
+        "internalName": "Cee",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "لا يعمل خارج العراق",
+        "fileSize": 47031,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNEnHalnMz2EfG48BZUI6iC86seq09uafFngG8gz1OWQ&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-ba0b10a5996a1de5cbf2a072efff564dad504ad10eebc503309e64b1a0af3176"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/CimaClub.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "CimaClub",
+        "internalName": "CimaClub",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "سيرفرات الموقع بها ضعف احيانا اذا لم يفتح  غالبا المشكلة من الموقع",
+        "fileSize": 17362,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1z-0NYyzyEiFs4q7X9c8SSBR6kJtVl7f7A&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-a7322d3368dd9da08655653b936cd4a4232ad530f11e4bc39662998846133f7f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Cimalight.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Cimalight",
+        "internalName": "Cimalight",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 25913,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Anime"
+        ],
+        "iconUrl": "https://yt3.googleusercontent.com/n2PDvQiQVV00JjGsg66dvMZKmyoolvCeu59Xe40pmEvhiMNE1tHqKsoEY1IpfdNNXdlle4It=s900-c-k-c0x00ffffff-no-rj",
+        "apiVersion": 1,
+        "fileHash": "sha256-f6b309909655043648791734c450893e9b1c4170c914d2aff2ed868c07c712ca"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Cimatn.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Cimatn",
+        "internalName": "Cimatn",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 38289,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Drama"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7OxHmLaqTWIj7eJv55zxus1xKVp5ssQPAKYjydt7Lg&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-033d3e74bbab8aa9f87dd5ba72515fbe5363564bd6f58fcdc3367ad3aee21cd2"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/cinemana.cs3",
+        "status": 1,
+        "version": 5,
+        "name": "cinemana",
+        "internalName": "cinemana",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "لا يعمل خارج العراق او اي شبكة غير ايرثلنك",
+        "fileSize": 54226,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZlAGH56cEnNEL93W3QqZWpUe8XR8i90olTA&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-7962d550ffc410155c9c67ff79b7682ae1a3dcb50a627a8b739f99f142def7b2"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/dima-toon.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "dima-toon",
+        "internalName": "dima-toon",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 19812,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Anime"
+        ],
+        "iconUrl": "https://www.dima-toon.com/wp-content/uploads/2025/10/DimaToonlogo11.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-cc92b98d7eb1eac19ef9c450363ec88fc881ad2deb36aa51a93ae48d3ab45b85"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Egy.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Egy",
+        "internalName": "Egy",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 51446,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/re-3arabi/refs/heads/main/Egy/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-53cafb40ea97beba06a9507b16d47d7cdf99ff417b344714100380dd6f18f84d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Egydead.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Egydead",
+        "internalName": "Egydead",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 53727,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime",
+            "AsianDrama"
+        ],
+        "iconUrl": "https://yt3.googleusercontent.com/ytc/AIdro_kgVTM6DJtx3tcS4gkPOOPnwFXKNhsrFyMRigWOlWomuQ=s900-c-k-c0x00ffffff-no-rj",
+        "apiVersion": 1,
+        "fileHash": "sha256-d54fdf0ecb9a57aaa0247b5f6345c74841120d97e94f6b47172f3c574967d1ea"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Elif.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Elif",
+        "internalName": "Elif",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 31058,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq14Sk88U37tIhiRndbNczqn0ectswZly90f1oCa_zbg&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-9bd1f22bd17cc965822d7632a06ce1bd05abfb0912f4197a6f8bd26f35bee06b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/eseek.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "eseek",
+        "internalName": "eseek",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 37973,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://gesseh.net/wp-content/uploads/2024/10/keesatlogo.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-bc8d81c7d4c3ee8aa2420fddabf756664b60242fbc10aa508f90e4c0c7d4a216"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Faselhd.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "Faselhd",
+        "internalName": "Faselhd",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 53922,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ03aoQBNDy_Hkm5MUGGvluPvK7To7BdGiSnzQn7WJ3fQ&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-4212ce471e4512840919efca0cd5dc2c52f5483e68e3f9afcbb063f006f2ec83"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Krmzy.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Krmzy",
+        "internalName": "Krmzy",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "البحث لا يعمل حاليا مشكلة من الموقع",
+        "fileSize": 29631,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwTnAJOvyri3uHzHxjkEdlaBBKs8MAvIuJtFmCoo9u5qYiuFpHZjcl6tDi&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-2cf8fd4fdd8840bd3e785c07fb43e00f2cfb45f3a6201304549c9a07efacddac"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Lodynet.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "Lodynet",
+        "internalName": "Lodynet",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 44495,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "tvTypes"
+        ],
+        "iconUrl": "https://lodynet.watch/wp-content/themes/Lodynet2020/Img/Logo.webp",
+        "apiVersion": 1,
+        "fileHash": "sha256-79a853a9b5a84ead13bc7ee474d2acf58c734758c4ab0741d98300b6539fdf2e"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/MyCimaProvider.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "MyCimaProvider",
+        "internalName": "MyCimaProvider",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 45476,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime",
+            "AsianDrama"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxoF3lscri32oVf0iQlhbjFEoUn2xg3OmQIx4wYdDmqw&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-5509bf74326ff713809ba3aad86474fbf57ccf94c8fbd22304885b43d549963f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/OscarTv.cs3",
+        "status": 0,
+        "version": 2,
+        "name": "OscarTv",
+        "internalName": "OscarTv",
+        "authors": [
+            "mo7AmMeD64"
+        ],
+        "description": "أفلام ومسلسلات وأنمي وقنوات مباشرة — Oscar TV — سيرفرات مباشرة 360p-1080p",
+        "fileSize": 39085,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime",
+            "TvChannel",
+            "Live"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/re-3arabi/refs/heads/main/OscarTv/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-66f73150539b08274a7ef339abad52932cefa6d0957f8f31f0bf5307a098bb53"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Rate.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Rate",
+        "internalName": "Rate",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 37121,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/re-3arabi/refs/heads/main/Rate/src/main/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-f6a5142e72c662cdc1b113081106c346bf3242126631f85975c018d23e25c44c"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Replaymatch.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "Replaymatch",
+        "internalName": "Replaymatch",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 29210,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "en",
+        "tvTypes": [
+            "Movie",
+            "Others",
+            "live"
+        ],
+        "iconUrl": "https://fullmatchshows.com/wp-content/uploads/2024/04/LOGOSASO.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-2ea8e3af37bb0ddfb3020e80c29eff6dedfc761641228d61d4c6575c3eccb3b9"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Shahid4u.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "Shahid4u",
+        "internalName": "Shahid4u",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 36552,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Ig85ZYdRsjDw--peeI2RsBqOWmvnmvKKsT4UONdPMQ&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-00a54b90e58154fd0e2fe6f603264b3c0896be7b3ea99318494709d35bd3dafb"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Shahidwbas.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Shahidwbas",
+        "internalName": "Shahidwbas",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 18361,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://cdn.wccftech.com/wp-content/uploads/2018/01/Youtube-music.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-07da67cd795d17b5b8189cfdfb544b429563260c6182397ccdb2244f193a622d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Syria-live.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Syria-live",
+        "internalName": "Syria-live",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 16742,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Live"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF607wnarFL8Ob8KLPahUPJzcLjbtg1pEH0A&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-dba038b11f01549cec54675fd75c58ea5ee2ac3501490eaaa24aecbe4d901e23"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Topcinema.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Topcinema",
+        "internalName": "Topcinema",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 30280,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "tvTypes"
+        ],
+        "iconUrl": "https://web8.topcinema.cam/wp-content/uploads/2023/05/cropped-icon-32x32.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-df67b3c8f47a04bcf892d54bc794507ee0998a46d710d0c4046a2c2bf7e456a2"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/TukTukcima.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "TukTukcima",
+        "internalName": "TukTukcima",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 42931,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ10TEG3tTtkEF9_g3IslEP3xs0wx9EVhBs7b_H5M1gpg&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-c3269d7f149e53773adb026be70248cb9f88581f1eb9a7df8d670057e7bd1a31"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/TuniflexBlog.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "TuniflexBlog",
+        "internalName": "TuniflexBlog",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 20750,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo47ccjaIfUnxJjGujQd6qTKTZH70W6LFeaFXht5TE8w&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-01f4cc4c73eb0a7e84809cca3dd0abdfae1833240976c2eb25c8083cd0336534"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Tuniflix.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Tuniflix",
+        "internalName": "Tuniflix",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 28766,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Drama"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe95deIIAAbyR9ArSievPWdM2QwiVG9bbQ6Y1uDIbRBpathzSs45b8uQ4&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-92335a5a3d04f1aca1f6c6b0832ea3d7734f55152736637044b9e51d647b6d53"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/TVgarden.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "TVgarden",
+        "internalName": "TVgarden",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 15565,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Live"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Lci-tXtOtWaHcEp9An7bqIkXs4yzH7EcfA&s",
+        "apiVersion": 1,
+        "fileHash": "sha256-1a8092d559060b58db82a9999485afc433b8cf46b1dd4e4d2eadd0ce97dffcfe"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Viu.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Viu",
+        "internalName": "Viu",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 38046,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Drama"
+        ],
+        "iconUrl": "https://img.utdstc.com/icon/a99/c9e/a99c9ee56e731144b335282e9981a54a7584be93fc9644ad7a03b45552307876:200",
+        "apiVersion": 1,
+        "fileHash": "sha256-cfe2f00d6c432a168708832ac48464d17b18622512311f556cd6e18c9126f9e9"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Wecima.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Wecima",
+        "internalName": "Wecima",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 29439,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "tvTypes"
+        ],
+        "iconUrl": "https://wecima.ac/static/img/favicon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-bd63bcb260505a009108c719af078be842f70705382f79abe9684f845c71af61"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Witanime.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Witanime",
+        "internalName": "Witanime",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 60603,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7AH2oC7LwumXRpHM8_WLpIFvDIfmS67jkjlhsCKpPaZdqcneigzUQX4g&s=10",
+        "apiVersion": 1,
+        "fileHash": "sha256-61567898515085b543b7a1b17399c93fcbaafca1ca09bdf903546836b0972078"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Yacintv.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Yacintv",
+        "internalName": "Yacintv",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 24443,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "TvSeries",
+            "Live",
+            "Movie"
+        ],
+        "iconUrl": "https://yt3.googleusercontent.com/ulm35tweg3do5istps0TgCjMmJSVczGUL2NIrXMwI1DDRi5ty29BIzQSUHVgqZN5CSo1PHhiA6M=s900-c-k-c0x00ffffff-no-rj",
+        "apiVersion": 1,
+        "fileHash": "sha256-001227cc7808356761885395ed677bfb523713385c0349a2f5b40cf6b13f36a3"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/storm2ak192/3arby-edit/builds/Youtube.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "Youtube",
+        "internalName": "Youtube",
+        "authors": [
+            "Abodabodd"
+        ],
+        "description": "",
+        "fileSize": 129346,
+        "repositoryUrl": "https://github.com/storm2ak192/3arby-edit",
+        "language": "ar",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Live",
+            "Anime",
+            "Music",
+            "Documentary"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/Abodabodd/Oldarabrepo/refs/heads/main/img/IMG_%D9%A2%D9%A0%D9%A2%D9%A5%D9%A1%D9%A2%D9%A0%D9%A6_%D9%A1%D9%A7%D9%A2%D9%A6%D9%A1%D9%A6.jpg",
+        "apiVersion": 1,
+        "fileHash": "sha256-aff2fd145d58601af6f843646d678fcd07d0aea493d979772a72fafa6bc48a9a"
+    }
+]
