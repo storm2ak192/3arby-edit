@@ -223,9 +223,18 @@ class FASELHD(private val context: Context) : MainAPI() {
 
         val headers = getProtectedHeaders()
 
-        return newTvSeriesSearchResponse(title, href, TvType.TvSeries) {
-            this.posterUrl = posterUrl
-            this.posterHeaders = headers
+        val isMovie = href.contains("movie", true) || href.contains("film", true) ||
+            this.hasClass("blockMovie") || this.hasClass("movie")
+        return if (isMovie) {
+            newMovieSearchResponse(title, href, TvType.Movie) {
+                this.posterUrl = posterUrl
+                this.posterHeaders = headers
+            }
+        } else {
+            newTvSeriesSearchResponse(title, href, TvType.TvSeries) {
+                this.posterUrl = posterUrl
+                this.posterHeaders = headers
+            }
         }
     }
     override val mainPage = mainPageOf(
@@ -276,6 +285,14 @@ class FASELHD(private val context: Context) : MainAPI() {
                         lists.add(HomePageList(title, items, isHorizontalImages = true))
                     }
                 }
+            if (lists.isEmpty()) {
+                val fallbackItems = document.select(".postDiv, .blockMovie, .epDivHome, article, .movie, .item, [class*=post]")
+                    .mapNotNull { it.toSearchResult() }
+                    .distinctBy { it.url }
+                if (fallbackItems.isNotEmpty()) {
+                    lists.add(HomePageList("أحدث الإضافات", fallbackItems))
+                }
+            }
             return newHomePageResponse(lists.filter { it.list.isNotEmpty() }, hasNext = false)
         } else {
             val items = document.select(".postDiv, .blockMovie, article, .movie, .item").mapNotNull { it.toSearchResult() }
