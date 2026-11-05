@@ -144,7 +144,7 @@ class Tuniflix : MainAPI() {
                     foundLinks.add(src)
                 }
             }
-            val scriptPattern = Regex("""https?://[^\\s"'<>]+""")
+            val scriptPattern = Regex("""https?://[^\\s]+""")
             document.select("script").forEach { script ->
                 val scriptText = (script.data() + script.html()).replace("\\\\/", "/")
                 scriptPattern.findAll(scriptText).forEach { match ->
