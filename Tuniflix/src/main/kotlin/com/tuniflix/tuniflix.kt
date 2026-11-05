@@ -127,7 +127,7 @@ class Tuniflix : MainAPI() {
         val foundLinks = linkedSetOf<String>()
         try {
             val document = app.get(url, referer = mainUrl).document
-            val candidates = document.select("iframe, frame, video source, source[src], [data-src], [data-lazy-src], [data-embed]")
+            val candidates = document.select("iframe, frame, video source, source[src], [data-embed], .TPlayer [data-src], [class*=player] [data-src], [class*=player] [data-lazy-src]")
             candidates.forEach { element ->
                 val raw = element.attr("src")
                     .ifBlank { element.attr("data-src") }
