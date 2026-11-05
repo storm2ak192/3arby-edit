@@ -431,7 +431,7 @@ class FASELHD(private val context: Context) : MainAPI() {
             ?.let { fixUrlNull(it) }
 
         val headers = getProtectedHeaders()
-        val seasonCards = doc.select(".seasonDiv")
+        val seasonCards = doc.select(".seasonDiv, .seasonCard, .seasons .item")
         val seasonUrlRegex = Regex("""window\.location\.href\s*=\s*['"]([^'"]+)['"]""")
 
         val recommendations = seasonCards.mapNotNull { seasonEl ->
@@ -476,7 +476,7 @@ class FASELHD(private val context: Context) : MainAPI() {
                 val seasonName = seasonCards[i].selectFirst(".title")?.text()?.replace("\\n", "")?.trim() ?: "الموسم $actualSeasonNum"
 
                 if (i == currentSeasonIndex) {
-                    doc.select("div#epAll a").forEach { el ->
+                    doc.select("div#epAll a, .episodesList a, .episodes a, .epAll a").forEach { el ->
                         val epUrlRaw = el.attr("href").trim()
                         if (epUrlRaw.isNotBlank()) {
                             val epTitle = el.ownText().ifBlank { el.text() }.replace("\\n", "").replace("\n", "").trim()
@@ -559,7 +559,7 @@ class FASELHD(private val context: Context) : MainAPI() {
                 }
             }
         }
-        doc.select("iframe, frame, [data-src], [data-lazy-src], [data-embed]").forEach { el ->
+        doc.select("iframe, frame, [data-embed], .player [data-src], [class*=player] [data-src], [class*=player] [data-lazy-src]").forEach { el ->
             val src = el.attr("src").ifBlank { el.attr("data-src") }
                 .ifBlank { el.attr("data-lazy-src") }.ifBlank { el.attr("data-embed") }
             if (src.isNotBlank()) addResult(src)
