@@ -84,6 +84,7 @@ class FASELHD(private val context: Context) : MainAPI() {
             }
 
             redirectUrl = base
+            mainUrl = base
 
             base
         } catch (e: Exception) {
@@ -115,14 +116,24 @@ class FASELHD(private val context: Context) : MainAPI() {
         )
     }
     private fun getProtectedHeaders(): Map<String, String> {
-        return getModernHeaders(mainUrl)
+        return getModernHeaders(mainUrl).apply { this["Referer"] = "$mainUrl/" }
+    }
+
+    private fun fixUrl(raw: String): String {
+        val value = raw.trim().replace("&amp;", "&")
+        return when {
+            value.isBlank() -> ""
+            value.startsWith("//") -> "https:$value"
+            value.startsWith("/") -> mainUrl.trimEnd('/') + value
+            else -> value
+        }
     }
     private suspend fun smartGet(
         url: String,
         referer: String? = null,
         timeoutSeconds: Long? = null
     ): Document {
-        val cleanUrl = if (!url.endsWith("/") && !url.substringAfterLast("/").contains(".")) "$url/" else url
+        val cleanUrl = url
         for (attempt in 1..3) {
             try {
                 val headers = getModernHeaders(cleanUrl)
@@ -201,11 +212,13 @@ class FASELHD(private val context: Context) : MainAPI() {
 
 
     private fun Element.toSearchResult(): SearchResponse? {
-        val href = this.selectFirst("a")?.attr("href")?.trim() ?: return null
-        val title = this.selectFirst(".h1, .h4, .h5")?.text()?.trim() ?: return null
+        val anchor = this.selectFirst("a[href]") ?: return null
+        val href = fixUrl(anchor.attr("href").trim())
+        val title = (this.selectFirst(".h1, .h4, .h5, .title, .name")?.text()
+            ?: anchor.attr("title").ifBlank { anchor.text() }).trim()
         val posterUrl = this.selectFirst("img")
-            ?.let { it.attr("data-src").ifBlank { it.attr("src") } }
-            ?.trim()
+            ?.let { it.attr("data-src").ifBlank { it.attr("data-lazy-src") }.ifBlank { it.attr("src") } }
+            ?.let { fixUrl(it.trim()) }
         if (href.isBlank() || title.isBlank()) return null
 
         val headers = getProtectedHeaders()
@@ -233,7 +246,7 @@ class FASELHD(private val context: Context) : MainAPI() {
         val headers = getProtectedHeaders()
         if (request.data.endsWith("/main") || request.data == mainUrl) {
             val lists = mutableListOf<HomePageList>()
-            val sliderItems = document.select("#homeSlide .swiper-slide").mapNotNull {
+            val sliderItems = document.select("#homeSlide .swiper-slide, .swiper-slide, .slider .item, .slider .postDiv").mapNotNull {
                 val slideHref = it.selectFirst("a")?.attr("href") ?: return@mapNotNull null
                 val slideTitle = it.selectFirst(".h1 a")?.text()?.trim() ?: return@mapNotNull null
                 val slidePoster = it.selectFirst(".poster img")?.attr("src")
@@ -245,9 +258,10 @@ class FASELHD(private val context: Context) : MainAPI() {
             if (sliderItems.isNotEmpty()) {
                 lists.add(HomePageList("أحدث الإضافات", sliderItems, isHorizontalImages = true))
             }
-            document.select("section#blockList").forEach { block ->
-                val title = block.selectFirst(".blockHead .h3")?.text()?.trim() ?: return@forEach
-                val items = block.select(".blockMovie, .postDiv, .epDivHome").mapNotNull { it.toSearchResult() }
+            document.select("section#blockList, .blockList, section[class*=block], .Block, .moviesList").forEach { block ->
+                val title = block.selectFirst(".blockHead .h3, .blockHead h2, h2, h3, .title")?.text()?.trim()
+                    ?: "أحدث الإضافات"
+                val items = block.select(".blockMovie, .postDiv, .epDivHome, article, .item, .movie").mapNotNull { it.toSearchResult() }
 
                 if (items.isNotEmpty()) {
                     lists.add(HomePageList(title, items))
@@ -264,7 +278,7 @@ class FASELHD(private val context: Context) : MainAPI() {
                 }
             return newHomePageResponse(lists.filter { it.list.isNotEmpty() }, hasNext = false)
         } else {
-            val items = document.select(".postDiv, .blockMovie").mapNotNull { it.toSearchResult() }
+            val items = document.select(".postDiv, .blockMovie, article, .movie, .item").mapNotNull { it.toSearchResult() }
             val hasNext = document.select("ul.pagination a[href*='/page/${page + 1}']").isNotEmpty()
             return newHomePageResponse(request.name, items, hasNext)
         }
@@ -379,15 +393,20 @@ class FASELHD(private val context: Context) : MainAPI() {
         val base = baseUrl()
         val absoluteUrl = if (url.startsWith("/")) "$base$url" else url
         val doc = smartGet(absoluteUrl)
-        val rawTitle = doc.selectFirst(".singleInfo .title.h1")?.ownText() ?: ""
+        val rawTitle = doc.selectFirst(".singleInfo .title.h1, h1.entry-title, h1.title, article h1, h1")?.let {
+            it.ownText().ifBlank { it.text() }
+        } ?: doc.selectFirst("meta[property=og:title]")?.attr("content").orEmpty()
         val title = rawTitle.replace("\\n", "").replace("\n", "").trim()
-        if (title.isBlank()) return null
+        if (title.isBlank() || doc.body().text().isBlank()) return null
 
         val plot = doc.selectFirst(".singleDesc p, .story p")?.text()?.replace("\\n", " ")?.replace("\n", " ")?.trim()
 
         val poster = fixUrlNull(
-            doc.selectFirst("meta[itemprop=image]")?.attr("content")
-                ?: doc.selectFirst(".posterImg img.poster")?.attr("src")
+            doc.selectFirst("meta[property=og:image]")?.attr("content")
+                ?.ifBlank { doc.selectFirst("meta[itemprop=image]")?.attr("content") }
+                ?: doc.selectFirst(".posterImg img.poster, .poster img, .singleInfo img")?.let {
+                    it.attr("data-src").ifBlank { it.attr("data-lazy-src") }.ifBlank { it.attr("src") }
+                }
         )
 
         val backgroundPoster = doc.selectFirst("div.singlePage")?.attr("style")
@@ -514,13 +533,18 @@ class FASELHD(private val context: Context) : MainAPI() {
         fun addResult(url: String) {
             val fixedUrl = fixUrl(url)
             if (blockedKeywords.none { fixedUrl.contains(it) }) {
-                if (fixedUrl.contains("player") || fixedUrl.contains("embed") || fixedUrl.contains("video")) {
+                if (fixedUrl.startsWith("http", true) &&
+                    !fixedUrl.contains("recaptcha", true) &&
+                    !fixedUrl.contains("googlesyndication", true) &&
+                    !fixedUrl.contains("googletagmanager", true)
+                ) {
                     results.add(fixedUrl)
                 }
             }
         }
-        doc.select("iframe[src]").forEach { el ->
-            val src = el.attr("src")
+        doc.select("iframe, frame, [data-src], [data-lazy-src], [data-embed]").forEach { el ->
+            val src = el.attr("src").ifBlank { el.attr("data-src") }
+                .ifBlank { el.attr("data-lazy-src") }.ifBlank { el.attr("data-embed") }
             if (src.isNotBlank()) addResult(src)
         }
         val onClickRegex = Regex("""player_iframe\.location\.href\s*=\s*['"]([^'"]+)['"]""")
@@ -737,8 +761,7 @@ class FASELHD(private val context: Context) : MainAPI() {
                     val url = request?.url.toString().lowercase()
                     if (!url.startsWith("http")) return true
                     if (url.contains("recaptcha") || url.contains("melbet") || url.contains("policies.google")) return true
-                    val currentHost = try { Uri.parse(url).host?.replace("www.", "") ?: "" } catch (e: Exception) { "" }
-                    return originalHost.isNotBlank() && currentHost.isNotBlank() && !currentHost.contains(originalHost)
+                    return false
                 }
 
                 override fun onPageFinished(view: WebView?, url: String?) {
@@ -754,7 +777,7 @@ class FASELHD(private val context: Context) : MainAPI() {
                     if (lowerUrl.contains(".m3u8")) {
                         handleFoundLink(reqUrl)
                     }
-                    if (lowerUrl.contains("faselhdx.life") || lowerUrl.contains("video_player")) {
+                    if (false) {
                         try {
                             val url = URL(reqUrl)
                             val connection = (url.openConnection() as HttpURLConnection).apply {
